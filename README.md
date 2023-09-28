@@ -8,13 +8,9 @@ What if we could delve into the minds of these star-givers, extracting insights 
 
 This app is inspired by the "original" [Stargazers app](https://github.com/spencerkimball/stargazers) written by Spencer Kimball from Cockroach Labs. While the original app focused on analyzing the community exclusively using the GitHub API, our LLM-powered Stargazers app powered by EvaDB also extracts insights from unstructured data obtained from the stargazers' webpages.
 
-👋 Hey! If you're excited about database systems for AI applications, show some ❤️ by: 
-<ul>
-  <li> 🐙 giving a ⭐ on our <a href="https://github.com/georgia-tech-db/evadb">EvaDB repo on Github</a>
-  <li> 📟 joining our <a href="https://evadb.ai/community">Slack Community</a>
-  <li> 🐦 following us on <a href="https://twitter.com/evadb_ai">Twitter</a>
-  <li> 📝 following us on <a href="https://medium.com/evadb-blog">Medium</a>
-</ul>
+## LLM Cost Optimizations
+
+To generate the most accurate results, this app can directly use GPT-4 to generate the entire structured data. However, GPT-4 calls are **40 times** more expensive per row than GPT-3.5 calls. It takes **$60** to process just **1000 users**. So, this app uses a **model cascade optimization** to generate high-quality insights at a fraction of the cost. Additionally, with EvaDB, it is easy to **batch** input user rows to GPT-4 to further reduce the cost of the query.  Using these optimizations, we found that the app has **11x lower cost** than a standalone GPT-4 model. The batching optimization is implemented in [chatgpt_batch.py](functions/chatgpt_batch.py).
 
 ## Getting Started
 
@@ -126,13 +122,20 @@ SELECT name,
 FROM sqlite_data.{repo_name}_StargazerInsights;
 ```
 
-## Cost Optimizations
-
-To generate the most accurate results, we could use GPT-4 to generate the entire structured data. However, GPT-4 calls are 40 times more expensive per row than GPT-3.5 calls. The Model Cascade approach allows us to generate high-quality insights at a fraction of the cost. Additionally, we batch input rows to GPT-4 to further reduce the cost of the query. Using these optimizations, we found that our pipeline results in 11x lower cost than a standalone GPT-4 model.
-The batching optimization is implemented in [chatgpt_batch.py](functions/chatgpt_batch.py).
-
 ## Results
 
 The app generates a CSV file with insights about your stargazers. Here is a sample analysis of the distribution stargazers' topics of interest for the [GPT4All](https://github.com/nomic-ai/gpt4all) community:
 
-![GPT4All Stargazers](images/gpt4all_interests.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pchunduri6/stargazers-reloaded/pre-release/images/gpt4all_interests.png" width="40%" alt="GPT4All Stargazers">
+</p>
+
+## EvaDB Shoutout
+
+👋 Hey! If you're excited about database systems for AI applications, show some ❤️ by: 
+<ul>
+  <li> 🐙 giving a ⭐ on our <a href="https://github.com/georgia-tech-db/evadb">EvaDB repo on Github</a>
+  <li> 📟 joining our <a href="https://evadb.ai/community">Slack Community</a>
+  <li> 🐦 following us on <a href="https://twitter.com/evadb_ai">Twitter</a>
+  <li> 📝 following us on <a href="https://medium.com/evadb-blog">Medium</a>
+</ul>
