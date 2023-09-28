@@ -124,19 +124,43 @@ FROM sqlite_data.{repo_name}_StargazerInsights;
 
 ## Results
 
-The app generates a CSV file with insights about your stargazers. Here is a plot of the topics of interest of stargazers from the [GPT4All](https://github.com/nomic-ai/gpt4all) community.
+The app generates a CSV file with insights about your stargazers in the `results` folder. We provide a sample CSV output file. To generate visualizations from the insights, run the following command:
 
-**Web developers ❤️ LLMs 🤩**
+```bash
+python visualize_results.py
+```
+
+The visualizations are saved in the `images` folder.
+
+Here are some interesting trends that we found in the [GPT4All](https://github.com/nomic-ai/gpt4all), [Langchain](https://github.com/langchain-ai/langchain), and [CockroachDB](https://github.com/cockroachdb/cockroach) communities:
+
+**Web developers ❤️ open-source LLMs 🤩**
 
 <p align="center">
-  <img src="images/gpt4all_interests.png" width="70%" alt="GPT4All Stargazers">
+  <img src="images/gpt4all_topics_wordcloud.png" width="40%" alt="gpt4all WordCloud">
+  &nbsp;&nbsp;
+  <img src="images/gpt4all_topics_pie_chart.png" width="40%" alt="gpt4all Topics">
 </p>
 
+**Langchain is most popular 📈 in the Machine Learning interest groups**
 
+<p align="center">
+  <img src="images/langchain_topics_wordcloud.png" width="40%" alt="langchain WordCloud">
+  &nbsp;&nbsp;
+  <img src="images/langchain_topics_pie_chart.png" width="40%" alt="langchain Topics">
+</p>
+
+**CockroachDB is most followed by Database developers 📊 in the United States 🇺🇸**
+
+<p align="center">
+  <img src="images/cockroach_topics_pie_chart.png" width="40%" alt="cockroach Topics">
+  &nbsp;&nbsp;
+  <img src="images/cockroach_countries_pie_chart.png" width="40%" alt="cockroach Countries">
+</p>
 
 ## EvaDB Shoutout
 
-👋 Hey! If you're excited about database systems for AI applications, show some ❤️ by: 
+👋 Hey! If you're excited about database systems for AI applications, show some ❤️ by:
 <ul>
   <li> 🐙 giving a ⭐ on our <a href="https://github.com/georgia-tech-db/evadb">EvaDB repo on Github</a>
   <li> 📟 joining our <a href="https://evadb.ai/community">Slack Community</a>

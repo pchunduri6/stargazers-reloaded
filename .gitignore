@@ -163,3 +163,5 @@ cython_debug/
 *venv/
 evadb_data
 **/*.json
+**/*.csv
+**/*.png
