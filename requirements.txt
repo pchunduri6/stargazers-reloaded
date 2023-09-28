@@ -1,0 +1,8 @@
+git+https://github.com/georgia-tech-db/evadb.git@staging
+PyGithub
+selenium
+easyocr
+tqdm
+tiktoken
+openai
+python-dotenv==1.0.0
