@@ -124,11 +124,16 @@ FROM sqlite_data.{repo_name}_StargazerInsights;
 
 ## Results
 
-The app generates a CSV file with insights about your stargazers. Here is a sample analysis of the distribution stargazers' topics of interest for the [GPT4All](https://github.com/nomic-ai/gpt4all) community:
+
+The app generates a CSV file with insights about your stargazers. 
+
+Here is an interesting plot of the topics of interest of stargazers from the [GPT4All](https://github.com/nomic-ai/gpt4all) community:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pchunduri6/stargazers-reloaded/pre-release/images/gpt4all_interests.png" width="40%" alt="GPT4All Stargazers">
+  <img src="images/gpt4all_interests.png" width="70%" alt="GPT4All Stargazers">
 </p>
+
+
 
 ## EvaDB Shoutout
 
