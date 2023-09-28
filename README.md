@@ -1,11 +1,20 @@
-# stargazers-reloaded
-LLM-Powered Analyses of your GitHub Community using EvaDB
+# Stargazers Reloaded
 
-GitHub stars offer unique perspective into what resonates with the coding community, capturing emerging trends and timeless staples. This app utilizes [EvaDB](https://github.com/georgia-tech-db/evadb) to extract deeper insights directly from stargazers' profiles using large language models (LLMs).
+## LLM-Powered Analysis of Your GitHub Community
 
-Inspired by the original [Stargazers app](https://github.com/spencerkimball/stargazers), this LLM-powered version analyzes unstructured data from web pages to derive key details about your audience. EvaDB streamlines access to leading LLMs, enabling a 360-degree view of your community's interests and needs.
+GitHub 🌟 are like badges of honor in the dynamic software development realm. They symbolize a repository's popularity in the developer community. Whether you're a developer, open-source enthusiast, or just curious about tech trends, these stars provide insights into the coding community.
 
-Let AI illuminate the minds of your stargazers - and guide you closer to your audience.
+What if we could delve into the minds of these star-givers, extracting insights from their profiles to understand their interests, locations, and more? In this app, we show how [EvaDB](https://github.com/georgia-tech-db/evadb) makes it super easy to get insights about your GitHub community using large language models (LLMs). 
+
+This app is inspired by the "original" [Stargazers app](https://github.com/spencerkimball/stargazers) written by Spencer Kimball from Cockroach Labs. While the original app focused on analyzing the community exclusively using the GitHub API, our LLM-powered Stargazers app powered by EvaDB also extracts insights from unstructured data obtained from the stargazers' webpages.
+
+👋 Hey! If you're excited about database systems for AI applications, show some ❤️ by: 
+<ul>
+  <li> 🐙 giving a ⭐ on our <a href="https://github.com/georgia-tech-db/evadb">EvaDB repo on Github</a>
+  <li> 📟 joining our <a href="https://evadb.ai/community">Slack Community</a>
+  <li> 🐦 following us on <a href="https://twitter.com/evadb_ai">Twitter</a>
+  <li> 📝 following us on <a href="https://medium.com/evadb-blog">Medium</a>
+</ul>
 
 ## Getting Started
 
