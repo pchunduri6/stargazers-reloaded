@@ -21,7 +21,6 @@ import pandas as pd
 from retry import retry
 
 from evadb.catalog.catalog_type import NdArrayType
-from evadb.configuration.configuration_manager import ConfigurationManager
 from evadb.functions.abstract.abstract_function import AbstractFunction
 from evadb.functions.decorators.decorators import forward, setup
 from evadb.functions.decorators.io_descriptors.data_types import (
@@ -32,8 +31,8 @@ import tiktoken
 from tqdm import tqdm
 
 _VALID_CHAT_COMPLETION_MODEL = [
-    "gpt-35-turbo",
-    "gpt-35-turbo-16k",
+    "gpt-3.5-turbo",
+    "gpt-3.5-turbo-16k",
     "gpt-4-32k",
 ]
 
@@ -85,7 +84,7 @@ class ChatGPTMultirow(AbstractFunction):
     @setup(cacheable=False, function_type="chat-completion", batchable=True)
     def setup(
         self,
-        model="gpt-35-turbo-16k",
+        model="gpt-3.5-turbo",
         temperature: float = 0,
     ) -> None:
         assert (
@@ -168,7 +167,7 @@ class ChatGPTMultirow(AbstractFunction):
             num_tokens += len(encoding.encode(queries[0]))
             print(f"Estimated input prompt tokens: {num_tokens}")
             params = {
-                "engine": self.model,
+                "model": self.model,
                 "temperature": self.temperature,
                 "messages": [],
             }

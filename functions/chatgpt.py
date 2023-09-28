@@ -21,7 +21,6 @@ import pandas as pd
 from retry import retry
 
 from evadb.catalog.catalog_type import NdArrayType
-from evadb.configuration.configuration_manager import ConfigurationManager
 from evadb.functions.abstract.abstract_function import AbstractFunction
 from evadb.functions.decorators.decorators import forward, setup
 from evadb.functions.decorators.io_descriptors.data_types import (
@@ -32,8 +31,8 @@ from tqdm import tqdm
 
 
 _VALID_CHAT_COMPLETION_MODEL = [
-    "gpt-35-turbo",
-    "gpt-35-turbo-16k",
+    "gpt-3.5-turbo",
+    "gpt-3.5-turbo-16k",
     "gpt-4-32k",
 ]
 
@@ -85,7 +84,7 @@ class ChatGPT(AbstractFunction):
     @setup(cacheable=False, function_type="chat-completion", batchable=True)
     def setup(
         self,
-        model="gpt-35-turbo-16k",
+        model="gpt-3.5-turbo",
         temperature: float = 0,
     ) -> None:
         assert (
@@ -125,7 +124,6 @@ class ChatGPT(AbstractFunction):
             return openai.ChatCompletion.create(**kwargs)
 
         # Register API key, try configuration manager first
-
         assert len(openai.api_key) != 0, (
             "Please set your OpenAI API key in evadb.yml file (third_party,"
             " open_api_key) or environment variable (OPENAI_KEY)"
@@ -152,7 +150,7 @@ class ChatGPT(AbstractFunction):
                 # Avoid hitting API limit
                 time.sleep(30)
             params = {
-                "engine": self.model,
+                "model": self.model,
                 "temperature": self.temperature,
                 "messages": [],
             }

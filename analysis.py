@@ -100,7 +100,7 @@ if __name__ == "__main__":
         cursor.query(
             """CREATE OR REPLACE FUNCTION GPT35
                 IMPL 'functions/chatgpt.py'
-                MODEL 'gpt-35-turbo-16k'
+                MODEL 'gpt-3.5-turbo-16k'
             """
         ).df()
 
