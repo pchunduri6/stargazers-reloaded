@@ -51,9 +51,9 @@ CREATE TABLE gpt4all_StargazerDetails AS
   FROM gpt4all_StargazerList;
 ```
 
-The `GithubUserdetails` function is implemented in [github_user_details.py](functions/github_user_details.py).
+The `GithubUserdetails` function is implemented in [`github_user_details.py`](functions/github_user_details.py).
 
-2. **Scraping stargazers' profiles**: The app then takes screenshots of stargazers' user profile pages and uses [EasyOCR](https://github.com/JaidedAI/EasyOCR) to extract unstructured text blobs from the screenshots, all in one query.
+2. **Scraping stargazers' profiles**: The app then takes screenshots of stargazers' user profile pages and uses [`EasyOCR`](https://github.com/JaidedAI/EasyOCR) to extract unstructured text blobs from the screenshots, all in one query.
 
 ```SQL
 --- Text in webpages of Stargazers extracted using WebPageTextExtractor
@@ -62,7 +62,7 @@ CREATE TABLE gpt4all_StargazerScrapedDetails AS
   FROM gpt4all_StargazerList;
 ```
 
-Check [webpage_text_extractor.py](functions/webpage_text_extractor.py) for more details on how the`WebPageTextExtractor` function performs the scraping.
+Check [`webpage_text_extractor.py`](functions/webpage_text_extractor.py) for more details on how the `WebPageTextExtractor` function performs the scraping.
 
 3. **Generating insights**: The app then uses GPT-3.5 to generate insights about the stargazers' interests and needs, using the text blobs extracted in the previous step. We use a custom prompt to guide the generation process and ensure that the generated insights are relevant to the repo. You can modify the prompt to suit your needs.
 
@@ -94,7 +94,7 @@ CREATE TABLE gpt4all_StargazerInsights AS
   FROM gpt4all_StargazerScrapedDetails;
 ```
 
-If you want to generate different insights with other column names, you can modify the prompt and the `StringToDataframe` function in [string_to_dataframe.py](functions/string_to_dataframe.py).
+If you want to generate different insights with other column names, you can modify the prompt and the `StringToDataframe` function in [`string_to_dataframe.py`](functions/string_to_dataframe.py).
 
 4. **Improving insights**: GPT-3.5 does not work well for all the columns. For example, it cannot categorize user interests into popular topics of interest effectively. To improve the quality of the insights, we use a Cascade of LLMs to generate insights for the `topics_of_interest` column.
 First, the GPT-3.5 query above generates a broad list of topics of interest. The semi-organized results are then processed by the more powerful GPT-4 model to generate a more focused list.
@@ -124,13 +124,13 @@ FROM sqlite_data.{repo_name}_StargazerInsights;
 
 ## Results
 
-The app generates a CSV file with insights about your stargazers in the `results` folder. We provide a sample CSV output file. To generate visualizations from the insights, run the following command:
+The app generates a CSV file with insights about your stargazers in the [`results`](results/) folder. We provide a sample CSV output file. To generate visualizations from the insights, run the following command:
 
 ```bash
 python visualize_results.py
 ```
 
-The visualizations are saved in the `images` folder.
+The visualizations are saved in the [`images`](images/) folder.
 
 Here are some interesting trends that we found in the [GPT4All](https://github.com/nomic-ai/gpt4all), [Langchain](https://github.com/langchain-ai/langchain), and [CockroachDB](https://github.com/cockroachdb/cockroach) communities:
 
