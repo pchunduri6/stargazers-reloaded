@@ -36,7 +36,7 @@ python stargarzers.py
 
 ## How it Works
 
-<img src="images/workflow.png" width="40%" alt="Workflow of LLM-Powered Analyses of GitHub Community">
+<img src="images/stargazer_workflow.png" width="100%" alt="Workflow of LLM-Powered Analyses of GitHub Community">
 
 The app uses EvaDB to generate insights about your stargazers in four steps:
 
