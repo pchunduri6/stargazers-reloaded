@@ -36,6 +36,8 @@ python stargarzers.py
 
 ## How it Works
 
+<img src="images/workflow.png" width="40%" alt="Workflow of LLM-Powered Analyses of GitHub Community">
+
 The app uses EvaDB to generate insights about your stargazers in four steps:
 
 1. **Collecting stargazers**: The app uses the GitHub API to collect the profile information of the stargazers of the repo specified in the `REPO_URL` environment variable.
