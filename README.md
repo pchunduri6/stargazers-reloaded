@@ -92,7 +92,7 @@ CREATE TABLE gpt4all_StargazerInsights AS
 If you want to generate different insights with other column names, you can modify the prompt and the `StringToDataframe` function in [string_to_dataframe.py](functions/string_to_dataframe.py).
 
 4. **Improving insights**: GPT-3.5 does not work well for all the columns. For example, it cannot categorize user interests into popular topics of interest effectively. To improve the quality of the insights, we use a Cascade of LLMs to generate insights for the `topics_of_interest` column.
-While the query above generates a broad list of topics of interest, we use the more powerful GPT-4 to generate a more focused list of topics of interest. Additionally, we also batch input rows to GPT-4 to further reduce the cost of the query.
+First, the GPT-3.5 query above generates a broad list of topics of interest. The semi-organized results are then processed by the more powerful GPT-4 model to generate a more focused list.
 
 ```Plain Text
 --- Prompt to GPT-4
@@ -117,10 +117,13 @@ SELECT name,
 FROM sqlite_data.{repo_name}_StargazerInsights;
 ```
 
+## Cost Optimizations
+
+To generate the most accurate results, we could use GPT-4 to generate the entire structured data. However, GPT-4 calls are 40 times more expensive per row than GPT-3.5 calls. The Model Cascade approach allows us to generate high-quality insights at a fraction of the cost. Additionally, we batch input rows to GPT-4 to further reduce the cost of the query. Using these optimizations, we found that our pipeline results in 11x lower cost than a standalone GPT-4 model.
 The batching optimization is implemented in [chatgpt_batch.py](functions/chatgpt_batch.py).
 
 ## Results
 
-The app generates a CSV file with the insights about your stargazers. Here is a sample analysis of the distribution stargazers' topic of interests for the [GPT4All](https://github.com/nomic-ai/gpt4all) repo:
+The app generates a CSV file with insights about your stargazers. Here is a sample analysis of the distribution stargazers' topics of interest for the [GPT4All](https://github.com/nomic-ai/gpt4all) community:
 
 ![GPT4All Stargazers](images/gpt4all_interests.png)
