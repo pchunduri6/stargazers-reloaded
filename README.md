@@ -142,7 +142,7 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/gpt4all_topics_pie_chart.png" width="40%" alt="gpt4all Topics">
 </p>
 
-**Langchain is most popular 📈 in the Machine Learning interest groups**
+**Langchain is most popular 📈 in the Machine Learning 🤖🧠 interest groups**
 
 <p align="center">
   <img src="images/langchain_topics_wordcloud.png" width="40%" alt="langchain WordCloud">
