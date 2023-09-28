@@ -1,6 +1,6 @@
-# Stargazers Reloaded
+# 🌟 Stargazers Reloaded
 
-## LLM-Powered Analysis of Your GitHub Community
+## LLM-Powered Analysis of Your GitHub Community 🐙
 
 GitHub 🌟 are like badges of honor in the dynamic software development realm. They symbolize a repository's popularity in the developer community. Whether you're a developer, open-source enthusiast, or just curious about tech trends, these stars provide insights into the coding community.
 
@@ -124,10 +124,9 @@ FROM sqlite_data.{repo_name}_StargazerInsights;
 
 ## Results
 
+The app generates a CSV file with insights about your stargazers. Here is a plot of the topics of interest of stargazers from the [GPT4All](https://github.com/nomic-ai/gpt4all) community.
 
-The app generates a CSV file with insights about your stargazers. 
-
-Here is an interesting plot of the topics of interest of stargazers from the [GPT4All](https://github.com/nomic-ai/gpt4all) community:
+**Web developers ❤️ LLMs 🤩**
 
 <p align="center">
   <img src="images/gpt4all_interests.png" width="70%" alt="GPT4All Stargazers">
