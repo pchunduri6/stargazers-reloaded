@@ -107,7 +107,7 @@ if __name__ == "__main__":
         cursor.query(
             """CREATE OR REPLACE FUNCTION GPT4
                 IMPL 'functions/chatgpt_batch.py'
-                MODEL 'gpt-4-32k'
+                MODEL 'gpt-4-0613'
             """
         ).df()
 
@@ -163,6 +163,7 @@ if __name__ == "__main__":
         ).df()
 
         print("Processing insights...")
+        # cursor.query(f"DROP TABLE IF EXISTS {repo_name}_StargazerInsights;").df()
 
         LLM_prompt = """You are given a block of disorganized text extracted from the GitHub user profile of a user using an automated web scraper. The goal is to get structured results from this data.
                 Extract the following fields from the text: name, country, city, email, occupation, programming_languages, topics_of_interest, social_media.
@@ -202,7 +203,7 @@ if __name__ == "__main__":
         ).df()
 
         print(select_query)
-
+        # cursor.query(f"DROP TABLE IF EXISTS {repo_name}_StargazerInsightsGPT4;").df()
         LLM_prompt = """You are given 10 rows of input, each row is separated by two new line characters.
                      Categorize the topics listed in each row into one or more of the following 3 technical areas - Machine Learning, Databases, and Web development. If the topics listed are not related to any of these 3 areas, output a single N/A. Do not miss any input row. Do not add any additional text or numbers to your output.
                      The output rows must be separated by two new line characters. Each input row must generate exactly one output row. For example, the input row [Recommendation systems, Deep neural networks, Postgres] must generate only the output row [Machine Learning, Databases].

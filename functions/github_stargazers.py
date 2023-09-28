@@ -77,11 +77,7 @@ class GithubStargazers(AbstractFunction):
             # Get the repository and its stargazers
             repository = github.get_repo(f"{owner}/{repo_name}")
             stargazers = []
-            stargazer_count = repository.get_stargazers().totalCount
-            for i, stargazer in tqdm(enumerate(repository.get_stargazers())):
-                # sample total of 1000 stargazers
-                if i % int(stargazer_count / 1000) == 0:
-                    stargazers.append(stargazer.login)
+            stargazers = [stargazer.login for stargazer in repository.get_stargazers()[:1000]]
 
         except Exception as e:
             print(f"Error: {str(e)}")

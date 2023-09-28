@@ -33,7 +33,7 @@ from tqdm import tqdm
 _VALID_CHAT_COMPLETION_MODEL = [
     "gpt-3.5-turbo",
     "gpt-3.5-turbo-16k",
-    "gpt-4-32k",
+    "gpt-4-0613",
 ]
 
 
@@ -123,7 +123,8 @@ class ChatGPTMultirow(AbstractFunction):
         def completion_with_backoff(**kwargs):
             return openai.ChatCompletion.create(**kwargs)
 
-        # Register API key, try configuration manager first
+        # Register API key
+        openai.api_key = os.environ.get('OPENAI_KEY')
         assert len(openai.api_key) != 0, (
             "Please set your OpenAI API key in evadb.yml file (third_party,"
             " open_api_key) or environment variable (OPENAI_KEY)"
@@ -217,9 +218,9 @@ class ChatGPTMultirow(AbstractFunction):
         print(f"Completion tokens used: {completion_tokens}")
         print(f"Prompt tokens used: {prompt_tokens}")
         pricing = {
-            "gpt-35-turbo": {"prompt": 0.0015, "completion": 0.002},
-            "gpt-35-turbo-16k": {"prompt": 0.003, "completion": 0.004},
-            "gpt-4-32k": {"prompt": 0.06, "completion": 0.12},
+            "gpt-3.5-turbo": {"prompt": 0.0015, "completion": 0.002},
+            "gpt-3.5-turbo-16k": {"prompt": 0.003, "completion": 0.004},
+            "gpt-4-0613": {"prompt": 0.03, "completion": 0.06},
         }
         print(
             f"Prompt tokens price: ${pricing[self.model]['prompt'] * prompt_tokens/1000}"
