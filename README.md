@@ -136,7 +136,6 @@ The visualizations are saved in the [`images`](images/) folder.
 
 Here are some interesting trends that we found in the [GPT4All](https://github.com/nomic-ai/gpt4all), [Langchain](https://github.com/langchain-ai/langchain), and [CockroachDB](https://github.com/cockroachdb/cockroach) communities:
 
-
 **Web developers ❤️ open-source LLMs 🤩**
 
 <p align="center">
@@ -156,9 +155,9 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
 **CockroachDB is most followed by Database and web developers 📊 in the United States 🇺🇸**
 
 <p align="center">
-  <img src="images/cockroachDB_topics_pie_chart.png" width="40%" alt="Cockroach Topics">
+  <img src="images/cockroachDB_topics_pie_chart.png" width="40%" alt="CockroachDB Topics">
   &nbsp;&nbsp;
-  <img src="images/cockroachDB_countries_pie_chart.png" width="40%" alt="Cockroach Countries">
+  <img src="images/cockroachDB_countries_pie_chart.png" width="40%" alt="CockroachDB Countries">
 </p>
 
 ## EvaDB Shoutout
