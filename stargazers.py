@@ -131,8 +131,7 @@ if __name__ == "__main__":
                 f"""
            CREATE TABLE IF NOT EXISTS {repo_name}_StargazerDetails AS
            SELECT GithubUserdetails(github_username, "{github_pat}")
-           FROM {repo_name}_StargazerList
-           LIMIT 10;
+           FROM {repo_name}_StargazerList;
         """
             ).df()
         )
@@ -204,7 +203,7 @@ if __name__ == "__main__":
 
         print(select_query)
 
-        select_query.to_csv(f"{repo_name}_insights_gpt35.csv", index=False)
+        select_query.to_csv(f"results/{repo_name}_insights_gpt35.csv", index=False)
         # cursor.query(f"DROP TABLE IF EXISTS {repo_name}_StargazerInsightsGPT4;").df()
         LLM_prompt = """You are given 10 rows of input, each row is separated by two new line characters.
                      Categorize the topics listed in each row into one or more of the following 3 technical areas - Machine Learning, Databases, and Web development. If the topics listed are not related to any of these 3 areas, output a single N/A. Do not miss any input row. Do not add any additional text or numbers to your output.
@@ -234,7 +233,7 @@ if __name__ == "__main__":
         """
         ).df()
 
-        select_query.to_csv(f"{repo_name}_insights_gpt4.csv", index=False)
+        select_query.to_csv(f"results/{repo_name}_insights_gpt4.csv", index=False)
 
     except Exception as e:
         print(f"❗️ EvaDB Session ended with an error: {e}")

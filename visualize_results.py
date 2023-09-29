@@ -17,11 +17,10 @@ if not load_dotenv():
     exit(1)
 
 # REPO DETAILS
-# repo_url = os.environ.get('REPO_URL')
-# # Parse the repository URL to extract owner and repo name
-# parts = repo_url.strip("/").split("/")
-# repo_name = parts[-1]
-repo_name = "langchain"
+repo_url = os.environ.get('REPO_URL')
+# Parse the repository URL to extract owner and repo name
+parts = repo_url.strip("/").split("/")
+repo_name = parts[-1]
 
 
 def plot_pie_chart(data, title, output_path):
@@ -100,7 +99,7 @@ def clean_topics_list(topics_list):
 
 if __name__ == '__main__':
 
-    output_dir = "images_new"
+    output_dir = "images"
     os.makedirs(output_dir, exist_ok=True)
 
     # 1. Visualize gpt-35 interests insights in a Word Cloud
@@ -139,8 +138,6 @@ if __name__ == '__main__':
 
     # Count the occurrences of each topic
     topic_counts = all_topics.value_counts()
-    # all_colors = ["#001219", "#005F73", "#0A9396", "#94D2BD", "#E9D8A6", "#EE9B00", "#CA6702", "#BB3E03", "#AE2012", "#9B2226"]
-    # colors = [all_colors[1], all_colors[9], all_colors[5], all_colors[3]]
     plot_pie_chart(data=topic_counts,
                    title=f"Topics of Interest Distribution for {repo_name} users",
                    output_path=os.path.join(output_dir, f"{repo_name}_topics_pie_chart.png"))
