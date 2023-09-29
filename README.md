@@ -136,28 +136,29 @@ The visualizations are saved in the [`images`](images/) folder.
 
 Here are some interesting trends that we found in the [GPT4All](https://github.com/nomic-ai/gpt4all), [Langchain](https://github.com/langchain-ai/langchain), and [CockroachDB](https://github.com/cockroachdb/cockroach) communities:
 
+
 **Web developers ❤️ open-source LLMs 🤩**
 
 <p align="center">
-  <img src="images/gpt4all_topics_wordcloud.png" width="70%" alt="gpt4all WordCloud">
-  <br>
-  <img src="images/gpt4all_topics_pie_chart.png" width="70%" alt="gpt4all Topics">
+  <img src="images/gpt4all_topics_wordcloud.png" width="40%" alt="gpt4all WordCloud">
+  &nbsp;&nbsp;
+  <img src="images/gpt4all_topics_pie_chart.png" width="40%" alt="gpt4all Topics">
 </p>
 
 **Langchain is most popular 📈 in the Machine Learning 🤖🧠 interest groups**
 
 <p align="center">
-  <img src="images/langchain_topics_wordcloud.png" width="70%" alt="langchain WordCloud">
-  <br>
-  <img src="images/langchain_topics_pie_chart.png" width="70%" alt="langchain Topics">
+  <img src="images/langchain_topics_wordcloud.png" width="40%" alt="langchain WordCloud">
+  &nbsp;&nbsp;
+  <img src="images/langchain_topics_pie_chart.png" width="40%" alt="langchain Topics">
 </p>
 
-**CockroachDB is most followed by Database and web developers 📊 in the United States 🇺🇸**
+**CockroachDB is most followed by Database developers 📊 in the United States 🇺🇸**
 
 <p align="center">
-  <img src="images/cockroachDB_topics_pie_chart.png" width="70%" alt="CockroachDB Topics">
-  <br>
-  <img src="images/cockroachDB_countries_pie_chart.png" width="70%" alt="CockroachDB Countries">
+  <img src="images/cockroach_topics_pie_chart.png" width="40%" alt="cockroach Topics">
+  &nbsp;&nbsp;
+  <img src="images/cockroach_countries_pie_chart.png" width="40%" alt="cockroach Countries">
 </p>
 
 ## EvaDB Shoutout
