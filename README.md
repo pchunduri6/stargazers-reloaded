@@ -156,9 +156,9 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
 **CockroachDB is most followed by Database and web developers 📊 in the United States 🇺🇸**
 
 <p align="center">
-  <img src="images/cockroach_topics_pie_chart.png" width="40%" alt="Cockroach Topics">
+  <img src="images/cockroachDB_topics_pie_chart.png" width="40%" alt="Cockroach Topics">
   &nbsp;&nbsp;
-  <img src="images/cockroach_countries_pie_chart.png" width="40%" alt="Cockroach Countries">
+  <img src="images/cockroachDB_countries_pie_chart.png" width="40%" alt="Cockroach Countries">
 </p>
 
 ## EvaDB Shoutout
