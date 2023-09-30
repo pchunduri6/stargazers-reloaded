@@ -14,23 +14,31 @@ To generate the most accurate results, this app can directly use GPT-4 to genera
 
 ## Getting Started
 
+
 First install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Then, add the following environment variables to a `.env` file in the root directory of the project (see `example.env`):
+Then, add the following environment variables to a `.env` file in the root directory of the project (see `example.env`): To generate a Github Personal Access Token (PAT), here are the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">instructions</a>. To find your OpenAI API key, here are the <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key">instructions</a>.
 
 ```
-REPO_URL=<url of the repo to analyze>
-GITHUB_API=<your-github-personal-access-token>
-OPENAI_API=<your-openai-api-key>
+REPO_URL=<url of the repo to analyze....https://github.com/georgia-tech-db/evadb>
+GITHUB_API=<your-github-personal-access-token...github_pat_...>
+OPENAI_API=<your-openai-api-key...sk-...>
+```
+
+After filling in these variables in the `example.env` file, rename it file to `.env`. 
+
+```bash
+mv example.env .env
 ```
 
 Finally, run the app:
 
 ```bash
+
 python stargarzers.py
 ```
 
