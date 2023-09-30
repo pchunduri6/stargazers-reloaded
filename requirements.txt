@@ -1,4 +1,4 @@
-git+https://github.com/georgia-tech-db/evadb.git@staging
+evadb
 PyGithub
 selenium
 easyocr

@@ -33,6 +33,8 @@ def plot_pie_chart(data, title, output_path):
         explode[0] = 0.1
 
     colors = ["#005F73", "#AE2012", "#EE9B00", "#94D2BD"]
+    colors_dict = {"Web development": colors[0], "Machine Learning": colors[1], "Databases": colors[2], "Other": colors[3]}
+    colors = [colors_dict[x[0]] for x in data.index.tolist()]
     wedges, texts, autotexts = ax.pie(data, explode=explode, colors=colors, autopct=lambda pct: "{:.1f}%".format(pct),
                                     textprops=dict(color="w"), shadow=True, startangle=90)
 
