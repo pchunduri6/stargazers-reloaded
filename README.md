@@ -150,6 +150,10 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/gpt4all_topics_wordcloud.png" width="48%" alt="gpt4all WordCloud">
   &nbsp;&nbsp;
   <img src="images/gpt4all_topics_pie_chart.png" width="48%" alt="gpt4all Topics">
+  <br> <br>
+  <img src="images/gpt4all_countries_pie_chart.png" width="48%" alt="gpt4all Countries">
+  &nbsp;&nbsp;
+  <img src="images/gpt4all_starred_repos_pie_chart.png" width="48%" alt="gpt4all Repos">
 </p>
 
 **Langchain is most popular 📈 in the Machine Learning 🤖🧠 interest groups**
@@ -158,6 +162,10 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/langchain_topics_wordcloud.png" width="48%" alt="langchain WordCloud">
   &nbsp;&nbsp;
   <img src="images/langchain_topics_pie_chart.png" width="48%" alt="langchain Topics">
+  <br> <br>
+  <img src="images/langchain_countries_pie_chart.png" width="48%" alt="langchain Countries">
+  &nbsp;&nbsp;
+  <img src="images/langchain_starred_repos_pie_chart.png" width="48%" alt="langchain Repos">
 </p>
 
 **CockroachDB is most followed by Database and web developers 📊 in the United States 🇺🇸**
@@ -166,6 +174,10 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/cockroach_topics_wordcloud.png" width="48%" alt="CockroachDB WordCloud">
   &nbsp;&nbsp;
   <img src="images/cockroach_topics_pie_chart.png" width="48%" alt="CockroachDB Topics">
+  <br> <br>
+  <img src="images/cockroach_countries_pie_chart.png" width="48%" alt="cockroachDB Countries">
+  &nbsp;&nbsp;
+  <img src="images/cockroach_starred_repos_pie_chart.png" width="48%" alt="cockroachDB Repos">
 </p>
 
 ## EvaDB Shoutout
