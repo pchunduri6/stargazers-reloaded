@@ -2,7 +2,7 @@
 
 ## LLM-Powered Analysis of Your GitHub Community 🐙
 
-GitHub 🌟 are like badges of honor in the dynamic software development realm. They symbolize a repository's popularity in the developer community. Whether you're a developer, open-source enthusiast, or just curious about tech trends, these stars provide insights into the coding community.
+GitHub 🌟 symbolize a repository's popularity in the developer community. Whether you're a developer, open-source enthusiast, or just curious about tech trends, these stars provide insights into the coding community.
 
 What if we could delve into the minds of these star-givers, extracting insights from their profiles to understand their interests, locations, and more? In this app, we show how [EvaDB](https://github.com/georgia-tech-db/evadb) makes it super easy to get insights about your GitHub community using large language models (LLMs). 
 
