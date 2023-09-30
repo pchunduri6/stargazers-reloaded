@@ -140,9 +140,11 @@ The app generates a CSV file with insights about your stargazers in the [`result
 python visualize_results.py
 ```
 
-The visualizations are saved in the [`images`](images/) folder.
+The visualizations are saved in the [`images`](images/) folder. 
 
-Here are some interesting trends that we found in the [GPT4All](https://github.com/nomic-ai/gpt4all), [Langchain](https://github.com/langchain-ai/langchain), and [CockroachDB](https://github.com/cockroachdb/cockroach) communities:
+Here are some interesting trends that we found in three fast-growing communities.
+
+## [GPT4All](https://github.com/nomic-ai/gpt4all)
 
 **Web developers ❤️ open-source LLMs 🤩**
 
@@ -150,7 +152,13 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/gpt4all_topics_wordcloud.png" width="48%" alt="gpt4all WordCloud">
   &nbsp;&nbsp;
   <img src="images/gpt4all_topics_pie_chart.png" width="48%" alt="gpt4all Topics">
+  <br> <br>
+  <img src="images/gpt4all_countries_pie_chart.png" width="48%" alt="gpt4all Countries">
+  &nbsp;&nbsp;
+  <img src="images/gpt4all_starred_repos_pie_chart.png" width="48%" alt="gpt4all Repos">
 </p>
+
+## [Langchain](https://github.com/langchain-ai/langchain)
 
 **Langchain is most popular 📈 in the Machine Learning 🤖🧠 interest groups**
 
@@ -158,7 +166,13 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/langchain_topics_wordcloud.png" width="48%" alt="langchain WordCloud">
   &nbsp;&nbsp;
   <img src="images/langchain_topics_pie_chart.png" width="48%" alt="langchain Topics">
+  <br> <br>
+  <img src="images/langchain_countries_pie_chart.png" width="48%" alt="langchain Countries">
+  &nbsp;&nbsp;
+  <img src="images/langchain_starred_repos_pie_chart.png" width="48%" alt="langchain Repos">
 </p>
+
+## [CockroachDB](https://github.com/cockroachdb/cockroach)
 
 **CockroachDB is most followed by Database and web developers 📊 in the United States 🇺🇸**
 
@@ -166,6 +180,10 @@ Here are some interesting trends that we found in the [GPT4All](https://github.c
   <img src="images/cockroach_topics_wordcloud.png" width="48%" alt="CockroachDB WordCloud">
   &nbsp;&nbsp;
   <img src="images/cockroach_topics_pie_chart.png" width="48%" alt="CockroachDB Topics">
+  <br> <br>
+  <img src="images/cockroach_countries_pie_chart.png" width="48%" alt="CockroachDB Countries">
+  &nbsp;&nbsp;
+  <img src="images/cockroach_starred_repos_pie_chart.png" width="48%" alt="CockroachDB Repos">
 </p>
 
 ## EvaDB Shoutout
