@@ -9,11 +9,7 @@ from evadb.functions.abstract.abstract_function import AbstractFunction
 from evadb.functions.decorators.decorators import forward, setup
 from evadb.functions.decorators.io_descriptors.data_types import PandasDataframe
 
-import easyocr
 from tqdm import tqdm
-
-
-reader = easyocr.Reader(["en"], gpu=True)
 
 
 def scrape_user_page(url):
@@ -23,33 +19,43 @@ def scrape_user_page(url):
 
         driver = webdriver.Firefox(options=options)
 
-        driver.set_window_size(1920, 1080)
         # Open the GitHub user page
         driver.get(f"https://github.com/{url}")
-        # driver.execute_script("document.body.style.zoom='120%'")
 
         # Capture the user profile section
-        user_info_blocks = []
-        try:
-            user_info_blocks.append(driver.find_element(By.CLASS_NAME, "h-card"))
-        except:
-            pass
-        info_ids = ["user-profile-frame", "user-private-profile-frame"]
-        for info_id in info_ids:
+        user_profile_elements = {}
+        elements = ["name-card", "intro-card", "pinned-repos", "contributions"]
+        html_class_names = ["h-card", "markdown-body", "js-pinned-items-reorder-container", "js-yearly-contributions"]
+        for i in range(len(elements)):
             try:
-                user_info_blocks.append(driver.find_element(By.ID, info_id))
+                element_list = driver.find_elements(By.CLASS_NAME, html_class_names[i])
+                if len(element_list) > 0:
+                    user_profile_elements[elements[i]] = element_list[0]
             except:
                 pass
 
         extracted_text = ""
-        for info_block in user_info_blocks:
-            screenshot = info_block.screenshot_as_png
-            # with torch.cuda.device(gpu_id):
-            result = reader.readtext(screenshot, detail=0)
-            for i in result:
-                extracted_text += i + " "
+        for element in user_profile_elements:
+            if element == 'name-card':
+                lines = user_profile_elements[element].text.split('\n')
+                for line in lines:
+                    if 'Achievements' in line:
+                        break
+                    extracted_text += line + " "
+                continue
+            if element == 'contributions':
+                yearly_contributions_text = user_profile_elements[element].text.split('\n')
+                for line in yearly_contributions_text:
+                    if "contributions in the last year" in line:
+                        extracted_text += line + " "
+                    if "Contributed to" in line:
+                        extracted_text += line + " "
+                continue
+            lines = user_profile_elements[element].text.split('\n')
+            for line in lines:
+                extracted_text += line + " "
 
-        return extracted_text
+        return extracted_text.strip()
 
     except Exception as e:
         print(f"Error for {url}: {str(e)}")
@@ -124,7 +130,7 @@ class WebPageTextExtractor(AbstractFunction):
         urls = input_df["github_username"]
 
         # Use ThreadPoolExecutor for concurrent processing
-        num_workers = 1
+        num_workers = 16
         # Note: CUDA errors in EasyOCR with more than 1 worker
         ## profiling
         # 1 worker: 218.00s

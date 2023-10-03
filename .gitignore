@@ -165,3 +165,4 @@ evadb_data
 **/*.json
 **/*.csv
 **/*.png
+**/*.txt
